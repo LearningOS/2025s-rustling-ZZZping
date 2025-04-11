@@ -11,19 +11,13 @@ fn main() {
         panic!("my_option is None!");
     }
 
-    let my_arr = &[
-        -1, -2, -3,
-        -4, -5, -6
-    ];
+    let my_arr = [-1, -2, -3, -4, -5, -6];
     println!("My array! Here it is: {:?}", my_arr);
 
-    let mut my_empty_vec: Vec<i32> = vec![1, 2, 3, 4, 5];
-    my_empty_vec.clear();
+    let my_empty_vec: Vec<i32> = Vec::new();
     println!("This Vec is empty, see? {:?}", my_empty_vec);
 
-    let mut value_a = 45;
-    let mut value_b = 66;
-    // Let's swap these two!
-    std::mem::swap(&mut value_a, &mut value_b);
+    let (mut value_a, mut value_b) = (45, 66);
+    (value_a, value_b) = (value_b, value_a);
     println!("value a: {}; value b: {}", value_a, value_b);
 }
